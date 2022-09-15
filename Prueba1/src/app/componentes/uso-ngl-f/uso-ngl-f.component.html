@@ -1,0 +1,22 @@
+<p>uso-ngl-f works!</p>
+<button (click)="condicion = !condicion">Cambiar estado a {{!condicion}}</button>
+<p *ngIf="condicion"> Si ves este mensaje es porque la varibale condicion es verdadera</p>
+
+<hr>
+<ng-template #variableParaElse>
+  <p>Si ves este mensaje es porque la variable condicion es falsa</p>
+</ng-template>
+<p *ngIf="condicion; else variableParaElse">Si ves este mensaje es porque la varibale condicion es verdadera</p>
+
+<hr>
+<ng-template #variableParaIf>
+  <p>Si ves este mensaje es porque la variable condicion es verdadera</p>
+  <p>Si ves este mensaje es porque la variable condicion es verdadera</p>
+</ng-template>
+<ng-template #otraVariableParaElse>
+  <p>Si ves este mensaje es porque la variable condicion es falsa</p>
+  <p>Si ves este mensaje es porque la variable condicion es falsa</p>
+</ng-template>
+<p *ngIf="condicion; then variableParaIf else otraVariableParaElse">
+  Yo no me mostrare, mi proposito es evaluar el ngIf
+</p>
